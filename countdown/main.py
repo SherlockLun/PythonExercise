@@ -1,5 +1,6 @@
 import sys
 from countdown import Countdown
+from input_listener import InputListener
 
 def parse_args():
     if len(sys.argv) != 2:
@@ -15,6 +16,9 @@ def parse_args():
         sys.exit(1)
 
 if __name__ == "__main__":
+    listener = InputListener()
+    listener.start()
+    
     seconds = parse_args()
     cd = Countdown(seconds)
     cd.start()
